@@ -1,0 +1,18 @@
+START 1000h
+summ: macro &1, &2, &3
+LDA &2
+ADD &3
+endm
+start: ADD zero
+#macro a1, b2
+helloooo
+dfasdf
+asdf
+#mend
+NEG rez
+summ a, bb, ccc
+zero: WORD 0
+wsz: WORD 3
+lel: WORD 7
+rez: RESW 1
+END start
