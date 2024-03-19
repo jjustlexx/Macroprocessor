@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MacroClion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Macroprocessor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MacroClion">
+				<Option output="D:/Macroprocessor/cmake-build-debug/MacroClion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Macroprocessor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 MacroClion"/>
+					<CompileFile command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MacroClion/fast">
+				<Option output="D:/Macroprocessor/cmake-build-debug/MacroClion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Macroprocessor/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 MacroClion/fast"/>
+					<CompileFile command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Macroprocessor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Macroprocessor/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/Lexx/AppData/Local/JetBrains/Toolbox/apps/CLion-Nova/ch-0/241.14024.27/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Macroprocessor/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Macroprocessor/input.txt">
+			<Option target="MacroClion"/>
+		</Unit>
+		<Unit filename="D:/Macroprocessor/macro.c">
+			<Option target="MacroClion"/>
+		</Unit>
+		<Unit filename="D:/Macroprocessor/macro.h">
+			<Option target="MacroClion"/>
+		</Unit>
+		<Unit filename="D:/Macroprocessor/main.c">
+			<Option target="MacroClion"/>
+		</Unit>
+		<Unit filename="D:/Macroprocessor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

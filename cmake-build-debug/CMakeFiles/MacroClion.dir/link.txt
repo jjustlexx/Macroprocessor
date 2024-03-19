@@ -1,0 +1,3 @@
+C:\Users\Lexx\AppData\Local\JetBrains\Toolbox\apps\CLion-Nova\ch-0\241.14024.27\bin\cmake\win\x64\bin\cmake.exe -E rm -f CMakeFiles\MacroClion.dir/objects.a
+C:\Users\Lexx\AppData\Local\JetBrains\Toolbox\apps\CLion-Nova\ch-0\241.14024.27\bin\mingw\bin\ar.exe qc CMakeFiles\MacroClion.dir/objects.a @CMakeFiles\MacroClion.dir\objects1.rsp
+C:\Users\Lexx\AppData\Local\JetBrains\Toolbox\apps\CLion-Nova\ch-0\241.14024.27\bin\mingw\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\MacroClion.dir/objects.a -Wl,--no-whole-archive -o MacroClion.exe -Wl,--out-implib,libMacroClion.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MacroClion.dir\linkLibs.rsp
