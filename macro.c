@@ -76,15 +76,16 @@ static void define_name_nametab(char* _name) {
     nametab = tmp;
 }
 
-static void define_key(char* ptr) {
-    ptr += strlen(substr_start) + 1;
-    char* cpy = strdup(ptr);
-    char* tmp = strtok(ptr, separators);
+static void define_key(char* str) {
+    str += strlen(substr_start) + 1;
+    char* cpy = strdup(str);
+    const char* tmp = strtok(str, separators);
     //Находим имя макроса
     char* name[size];
     strcpy(name, tmp);
 
-    if(get_nametab(name) == NULL) {
+    const Nametab* ptr = get_nametab(name);
+    if(ptr == NULL) {
         in_macro = 1;
         //Передаем его в функцию, которая создает Nametab с именем этого макроса
         define_name_nametab(name);
@@ -95,6 +96,20 @@ static void define_key(char* ptr) {
         if(tmp != NULL ) {
             define_argtab(name, cpy);
         }
+    }else {
+        Deftab* dtmp = ptr->begin;
+
+        while (dtmp != NULL) {
+            free(dtmp->str);
+            Deftab* dtmp_copy = dtmp;
+            dtmp = dtmp->next;
+            free(dtmp_copy);
+
+
+            if(dtmp == ptr->end)
+                break;
+        }
+
     }
 }
 
@@ -132,8 +147,6 @@ static void define_deftab(FILE* _file) {
             Deftab* end = deftab;
             while(end->next != NULL)
                 end = end->next;
-            // end->str = (char*)malloc(strlen(cpy) + 1);
-            // strcpy(end->str, cpy);
             nametab->end = end;
             in_macro = 0;
             break;
@@ -143,6 +156,10 @@ static void define_deftab(FILE* _file) {
         strcpy(tmp->str, str);
         // cpy = strdup(str);
     }
+
+    if(fgets(str, sizeof(str), _file) == NULL && nametab->end == NULL)
+        printf("Error: Can't find #mend of %s\t\nFix it and try again!", nametab->key);
+
 }
 
 static Nametab* has_macro(char* _str) {
@@ -171,7 +188,6 @@ static Argtab* get_args(char* key) {
 static void remove_comments(const Deftab* tmp) {
     const char* sign = "//";
     const char* comment = strstr(tmp->str, sign);
-    // printf(tmp->str);
     if(comment != NULL) {
         char* cpy = (char*)malloc(strlen(tmp->str));
         memset(cpy, '\0', strlen(tmp->str) + 1);
@@ -195,7 +211,7 @@ static void remove_comments(const Deftab* tmp) {
 static void macro_call(const Nametab* ptr, FILE* out, char* str) {
     const Deftab* dtmp = ptr->begin;
     const Argtab* atmp = get_args(ptr->key);
-    
+
     if(atmp == NULL) {
         while(dtmp != ptr->end) {
             remove_comments(dtmp);
@@ -208,8 +224,11 @@ static void macro_call(const Nametab* ptr, FILE* out, char* str) {
         char* real_index_arr[atmp->num];
         int formal_index = 0;
         int real_index = 0;
-        const char* token = strtok(atmp->val, separators);
 
+        char* val = (char*)malloc(strlen(atmp->val));
+        strcpy(val, atmp->val);
+
+        const char* token = strtok(val, separators);
         while(token != NULL) {
             formal_index_arr[formal_index] = (char*)malloc(strlen(token));
             strcpy(formal_index_arr[formal_index], token);
@@ -228,20 +247,28 @@ static void macro_call(const Nametab* ptr, FILE* out, char* str) {
         }
 
         while(dtmp != NULL) {
+            char* copy = (char*)malloc(strlen(dtmp->str));
+            strcpy(copy, dtmp->str);
+
             for(int i = 0; i < atmp->num; ++i) {
-                const char* par = strstr(dtmp->str, formal_index_arr[i]);
+                char* cpy = (char*)malloc(strlen(dtmp->str));
+
+                const char* par = strstr(copy, formal_index_arr[i]);
                 if(par != NULL) {
-                    char* copy = (char*)malloc(strlen(dtmp->str));
-                    memset(copy, '\0', strlen(dtmp->str));
-                    strncpy(copy, dtmp->str,strlen(dtmp->str) - strlen(par));
+                    memset(cpy, '\0', strlen(copy));
+                    strncpy(cpy, copy,strlen(copy) - strlen(par));
                     par += strlen(formal_index_arr[i]);
-                    strcat(copy, real_index_arr[i]);
-                    strcat(copy, par);
-                    strcpy(dtmp->str, copy);
+                    strcat(cpy, real_index_arr[i]);
+                    strcat(cpy, par);
+                    strcpy(copy, cpy);
                 }
             }
 
-            fprintf(out, "%s", dtmp->str);
+            if(strcmp(dtmp->str, copy) == 0)
+                fprintf(out, "%s", dtmp->str);
+            else
+                fprintf(out, "%s", copy);
+
             if(dtmp == ptr->end)
                 break;
             dtmp = dtmp->next;
@@ -291,7 +318,6 @@ void macro_init(const char* _input, const char* _output) {
         char* str = strstr(buff, substr_start);
         if(str != NULL) {
             define_key(str);
-            // in_macro = 1;
         }
         if(in_macro == 1) {
             define_deftab(input);

@@ -1,25 +1,24 @@
-#macro annachat a1, b2, c3,
-  let a = a1 - b2
-  let b = c3 + a1
+#macro leha
+    printf("leha");
 #mend
-#macro lechat
-  // privet mir
-  let a = a1 + b2// ghbdtn
-  let b = c3 - a1
+
+#macro leha
+    printf("leha2");
 #mend
 
 START 1000h
-  summ: macro &1, &2, &3
-  LDA &2
-  ADD &3
-  endm
-start: ADD zero
-  NEG rez
-  summ a, bb, ccc
-  zero: WORD 0
-  annachat 3, 2, 1
-  wsz: WORD 3
-  lechat 5, 4, 2
-  lel: WORD 7
-  rez: RESW 1
+    summ: macro &1, &2, &3
+    LDA &2
+    ADD &3
+    endm
+    start: ADD zero
+    NEG rez
+    summ a, bb, ccc
+
+    leha
+
+    zero: WORD 0
+    wsz: WORD 3
+    lel: WORD 7
+rez: RESW 1
 END start
